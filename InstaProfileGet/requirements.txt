@@ -1,4 +1,0 @@
-PyQt5==5.15.10
-instaloader==4.10.2
-requests==2.31.0
-pillow==10.2.0 

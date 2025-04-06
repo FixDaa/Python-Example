@@ -3,7 +3,7 @@ import requests
 def get_postal_code_info(postal_code, country_code='US'):
     # Zippopotam.us API URL'si
     url = f'http://api.zippopotam.us/{country_code}/{postal_code}'
-    
+
     try:
         # API'ye istek gönder
         response = requests.get(url)

@@ -1,10 +1,26 @@
-import requests
+# ///////////////////////////////////
+
+import subprocess
+import sys
+
+def install_package(package_name):
+    """Belirtilen paketi yükler."""
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+
+try:
+    import requests
+except ImportError:
+    print("Görünüşe göre 'requests' kütüphanesi yüklenmemiş. Yükleniyor...")
+    install_package('requests')
+
+# ///////////////////////////////////
+
 
 def get_crypto_details(crypto_name):
     url = f"https://api.coingecko.com/api/v3/coins/{crypto_name}"
-    
+
     response = requests.get(url)
-    
+
     if response.status_code == 200:
         data = response.json()
         return data

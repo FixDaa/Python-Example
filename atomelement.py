@@ -1,5 +1,8 @@
+# ///////////////////////////////////
+
 import subprocess
 import sys
+
 
 def install_package(package_name):
     """Belirtilen paketi yükler."""
@@ -19,7 +22,7 @@ def element_bilgisi(element_ismi):
     try:
         # Elementi almak için ismi kullan
         element = getattr(periodictable, element_ismi.capitalize())
-        
+
 # Element bilgilerini yazdır
         print(f"Element: {element.name}")
         print(f"Sembol: {element.symbol}")

@@ -1,4 +1,20 @@
-import pyttsx3
+# ///////////////////////////////////
+
+import subprocess
+import sys
+
+def install_package(package_name):
+    """Belirtilen paketi yükler."""
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+
+try:
+    import pyttsx3
+except ImportError:
+    print("Görünüşe göre 'pyttsx3' kütüphanesi yüklenmemiş. Yükleniyor...")
+    install_package('pyttsx3')
+    import pyttsx3  # Kütüphaneyi yükledikten sonra tekrar import ediyoruz
+
+# /////////////////////////////////////////////
 
 # Ses motorunu başlat
 engine = pyttsx3.init()
